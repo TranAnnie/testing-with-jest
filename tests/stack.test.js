@@ -24,5 +24,5 @@ test("pop the first element", () => {
   stack.push("E");
   stack.push("J");
   expect(stack.peek()).toBeDefined();
-  expect(stack.pop()).toBe("E");
+  expect(stack.pop()).toBe("J");
 });
