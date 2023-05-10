@@ -1,4 +1,5 @@
 const { Builder, By, until } = require("selenium-webdriver");
+const { peek } = require("../src/stack");
 require("geckodriver");
 
 const fileUnderTest =
@@ -30,6 +31,17 @@ describe('Clicking "Pusha till stacken"', () => {
     await push.click();
     let alert = await driver.switchTo().alert();
     await alert.sendKeys("Bananer");
+    await alert.accept();
+  });
+});
+
+describe("Opens up an alert showing the last element in the stack", () => {
+  it("should display 'Bananer' in alert box", async () => {
+    let buttonPeek = await driver.findElement(By.id("peek"));
+    await buttonPeek.click();
+    let alert = await driver.switchTo().alert();
+    let alertText = await alert.getText();
+    expect(alertText).toEqual("Vad finns i stacken Tomat");
     await alert.accept();
   });
 });

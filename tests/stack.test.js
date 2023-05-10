@@ -20,7 +20,7 @@ test("peek on stack with two or more elements returns the top element", () => {
 
 test("pop the first element", () => {
   stack.push("H");
-  stack.pop("E");
+  stack.pop();
   stack.push("E");
   stack.push("J");
   expect(stack.peek()).toBeDefined();

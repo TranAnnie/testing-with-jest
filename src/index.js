@@ -20,6 +20,7 @@ window.onload = function () {
   });
 
   peek.addEventListener("click", function () {
-    display.innerHTML = stack.peek();
+    var peek = "Vad finns i stacken " + stack.peek();
+    alert(peek);
   });
 };
