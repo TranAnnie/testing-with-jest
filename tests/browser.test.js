@@ -41,7 +41,7 @@ describe("Opens up an alert showing the last element in the stack", () => {
     await buttonPeek.click();
     let alert = await driver.switchTo().alert();
     let alertText = await alert.getText();
-    expect(alertText).toEqual("Vad finns i stacken Tomat");
+    expect(alertText).toEqual("Vad finns i stacken Bananer");
     await alert.accept();
   });
 });
